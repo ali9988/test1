@@ -1,0 +1,11 @@
+<!--logs.wxml-->
+<view class="cont" wx:for='{{items}}' wx:key="items">
+ <view>
+  <image src='{{item.author.avatar_url}}'></image>
+ </view>
+
+ 
+ <view class='text'>
+  <navigator url="/pages/vcont/cont?id={{item.id}}">{{item.title}}</navigator>
+ </view>
+</view>

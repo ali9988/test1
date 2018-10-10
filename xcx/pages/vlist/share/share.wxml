@@ -1,0 +1,15 @@
+
+<!--logs.wxml-->
+<scroll-view scroll-y="true" bindscrolltolower="lower" lower-threshold="5">
+  <view class="cont" wx:for='{{items}}' wx:key="items">
+  <view>
+    <image src='{{item.author.avatar_url}}'></image>
+  </view>
+
+  
+  <view class='text'>
+    <navigator url="/pages/vcont/cont?id={{item.id}}" class="nav">{{item.title}}</navigator>
+  </view>
+  </view>
+  <view class="login">上划加载数据</view>
+</scroll-view>

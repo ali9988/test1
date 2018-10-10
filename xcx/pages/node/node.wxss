@@ -1,0 +1,15 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+navigator{
+  margin: 50rpx;
+  color: #fff;
+}
+.text{
+  color: red;
+}
+page{
+  background: #000;
+}

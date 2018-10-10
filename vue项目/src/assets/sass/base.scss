@@ -1,0 +1,15 @@
+ 
+ * {
+    margin: 0;
+    padding: 0;
+  }
+  ul,ol {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  //把px 单位 转换成rem
+  @function rem($px) {
+    @return $px/75px * 1rem;
+  }

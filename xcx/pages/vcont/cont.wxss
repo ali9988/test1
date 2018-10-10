@@ -1,0 +1,15 @@
+.text{
+  padding: 10rpx;
+  width:750rpx;
+  text-align: center;
+}
+.cc{
+ padding: 15rpx;
+ max-width: 750rpx;
+}
+.cc img{
+  width: 750rpx;
+}
+.title{
+  margin: 20rpx 0;
+}

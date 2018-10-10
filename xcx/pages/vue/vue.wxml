@@ -1,0 +1,10 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <navigator class='text'>Vue分类</navigator>
+  <navigator url="/pages/vlist/all/all">全部列表</navigator>
+  <navigator url="/pages/vlist/good/good">精华列表</navigator>
+  <navigator url="/pages/vlist/share/share">分享列表</navigator>
+  <navigator url="/pages/vlist/ask/ask">问答列表</navigator>
+  <navigator url="/pages/vlist/job/job">招聘列表</navigator>
+  <navigator url="/pages/vlist/dev/dev">Week</navigator>
+</view>

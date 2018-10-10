@@ -1,0 +1,30 @@
+.cont{
+  color: #000;
+  height: 140rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.cont image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+.cont .text{
+  white-space: nowrap;
+  line-height: 100rpx;
+}
+page{
+  background: #fff;
+  height: 100%;
+}
+scroll-view{
+  height: 100%;
+  width: 750rpx;
+}
+.login{
+  width: 750rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #000;
+}

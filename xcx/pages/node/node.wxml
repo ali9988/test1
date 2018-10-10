@@ -1,0 +1,10 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <navigator class='text'>Node分类</navigator>
+  <navigator url="/pages/nlist/all/all">全部列表</navigator>
+  <navigator url="/pages/nlist/good/good">精华列表</navigator>
+  <navigator url="/pages/nlist/share/share">分享列表</navigator>
+  <navigator url="/pages/nlist/ask/ask">问答列表</navigator>
+  <navigator url="/pages/nlist/job/job">招聘列表</navigator>
+  <navigator url="/pages/nlist/dev/dev">测试</navigator>
+</view>

@@ -1,0 +1,16 @@
+.text{
+  padding: 10rpx;
+  width:750rpx;
+  text-align: center;
+  color: #fff;
+}
+page{
+  background: #000;
+}
+.cc{
+ padding: 15rpx;
+ max-width: 750rpx;
+}
+.cc img{
+  width: 750rpx;
+}

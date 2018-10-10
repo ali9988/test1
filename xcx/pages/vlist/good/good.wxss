@@ -1,0 +1,16 @@
+.cont{
+  height: 140rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.cont image{
+  width: 100rpx;
+  height: 100rpx;
+  padding-right: 20rpx;
+}
+.cont .text{
+  white-space: nowrap;
+  line-height: 100rpx;
+}
+

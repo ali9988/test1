@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>遮罩层加拖拽</title>
+	<link rel="stylesheet" type="text/css" href="iconfont.css">
+	<script src="jquery-1.8.3.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+
+/*头部*/
+.header{
+	width:100%;
+	height:30px;
+	background:#f2f2f2;
+	position: relative;
+	border:1px solid #ddd;
+}
+.head{
+	width:990px;
+	height: 30px;
+	margin:0 auto;
+	height:30px;
+	font-size:12px;
+	line-height:30px;
+	color:#777;
+}
+.head a{
+	color:#777;
+	width:55px;
+}
+.head .left{
+	float:left;
+	width:50%;
+}
+.head .right{
+	float:right;
+	width:50%;
+	position:relative;
+}
+.head .left li{
+	float:left;
+	padding:0 10px;
+}
+.left a:hover{
+	color:red;
+	}
+.head .right li{
+	float:left;
+	
+	padding:0 5px;
+}
+
+.head .right ul{
+	float:right;
+}
+.right a:hover{
+	color:red;
+	text-decoration:underline;
+}
+.head .right .iconfont{
+	color:red;
+}
+.head .left ul{
+	padding-left:25px;
+}
+.head .right .right_1{
+	position:relative;
+}
+.head .right .right_2{
+	position:relative;
+}
+.head .right .right_1 a{
+    height: 20px;
+    cursor: pointer;
+    z-index: 1000;
+   	width:74px;
+   	text-align:center;
+   	line-height:20px;
+    position: relative;
+
+}
+.head  .right .right_1 div{
+	width:94px;
+	height:60px;
+	background:#fff;
+	text-align: center;
+	line-height:20px;
+	position:absolute;
+	top:29px;
+	left:-1px;
+	display:none;
+	border:1px solid #ddd;
+	border-top:none;
+	z-index: 100;
+}
+.head .right .right_2 a{
+    height: 20px;
+    cursor: pointer;
+   	width:74px;
+   	text-align:center;
+   	line-height:20px;
+    position: relative;
+    z-index: 1000;
+
+}
+.head  .right .right_2 div{
+	width:75px;
+	height:60px;
+	background:#fff;
+	text-align: center;
+	line-height:20px;
+	position:absolute;
+	top:29px;
+	left:-1px;
+	display:none;
+	border:1px solid #ddd;
+	border-top:none;
+	z-index:1000;
+}
+.head .right .right_1 a:hover+div{
+	display:block;
+}
+.head .right .right_1:hover{
+	background:#fff;
+	border:1px solid #ddd;
+    border-bottom:none;
+}
+.head .right .right_2 a:hover+div{
+	display:block;
+}
+.head .right .right_2:hover{
+	background:#fff;
+	border:1px solid #ddd;
+    border-bottom:none;
+}
+.head .right .right_4{
+	position:relative;
+}
+.head .right .right_3{
+	position:relative;
+}
+.head  .right .right_3 div{
+	width:175px;
+	height:200px;
+	z-index:10000;
+	display:none;
+	position:absolute;
+	top:29px;
+	left:-50px;
+}
+.right_3_1_0{
+	width:175px;
+	height:160px;
+	position:relative;
+	color:#000;
+}
+.right_3_1_1{
+	position:absolute;
+	top:155px;
+	left:20px;
+}
+.head .right .right_3:hover{
+	background:#fff;
+}
+.head .right .right_3:hover div{
+	display:block;
+}
+.head  .right .right_4 div{
+	width:135px;
+	height:170px;
+	background:#fff;
+	text-align: center;
+	line-height:20px;
+	position:absolute;
+	top:29px;
+	left:-68px;
+	display:none;
+	border:1px solid #ddd;
+	border-top:none;
+	z-index:10000;
+}
+.right_4_1 b{
+	display:inline-block;
+	margin-left:-75px;
+}
+.right_4_1 span{
+	display:inline-block;
+	width:125px;
+	height:60px;
+	border-bottom:1px dashed #eee;
+	text-align: center;
+	line-height:30px;
+}
+.head .right .right_4:hover{
+	background:#fff;
+	border:1px solid #ddd;
+    border-bottom:none;
+}
+.head .right .right_4:hover div{
+	display:block;
+}
+#show{
+	width: 680px;
+    margin: 0 auto;margin:0 auto;
+    color: #3e3e3e;
+    border: 2px solid #dedede;
+    border-top: 2px solid #ff4a00;
+    background-color: #FFF;
+    position: absolute;
+    top:136px;
+    left:378px;
+    z-index: 999999;
+    overflow: hidden;
+    display:none;
+}
+.xx{
+	position:absolute;
+	right:0;
+	width:40px;
+	height:40px;
+	color:red;
+	font-size:20px;
+	border:0;
+	background:#fff;
+	font-weight:bold;
+}
+
+.nei{
+	width:680px;
+	height:391px;
+	margin:20px auto;
+	position:relative;
+}
+.nei p{
+	font-size:12px;
+	margin-top:10px;
+}
+.nei a{
+	display:inline-block;
+	margin-top:10px;
+	color:red;
+	font-size:14px;
+}
+.aa{
+	display:block;
+	width:180px;
+	height:36px;
+	border:0;
+	background:red;
+	color:#fff;
+	margin:0 auto;
+}
+.wrap{
+	width:990px;
+	margin:0 auto;
+}
+
+.steps{
+    height: 46px;
+    border-bottom:2.5px solid #e6e6e6;
+    position: relative;
+}
+.steps ol {
+    width: 720px;
+    margin: 0 auto;
+}
+.steps ol li.active {
+    color: #3e3e3e;
+    border-bottom: 2px solid #ff4700;
+}
+.steps ol li {
+    width: 150px;
+    padding-left: 30px;
+}
+.steps ol li {
+    display: inline;
+    float: left;
+    width: 140px;
+    padding-left: 34px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #999;
+    font-family: "\5FAE\8F6F\96C5\9ED1","\534E\6587\7EC6\9ED1","\9ED1\4F53",arial;
+}
+.steps ol li i {
+    display: inline-block;
+    zoom: 1;
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    font-style: normal;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFF;
+    background: url(../images/step-icon1.png) no-repeat 0 0;
+}
+.steps ol li.active i{
+	background:url(../images/step-icon.png)  no-repeat 0 0;
+}
+.shouji{
+	width:720px;
+	height:191px;
+	margin:50px auto;
+}
+.shouji1{
+	width:720px;
+	height:57px;
+	font-size:16px;
+}
+.shouji1 .mo{
+	display:inline-block;
+	width:162px;
+	height:32px;
+	text-align:left;
+	line-height:57px;
+	margin-top:10px;
+	margin-left:1px;
+	position:relative;
+	top:-2px;
+}
+.shouji2-1{
+    display: inline;
+    float: left;
+    margin-left: -240px;
+    width: 240px;
+    height: 37px;
+    line-height: 37px;
+    text-align: right;
+}
+.shouji2{
+    padding: 10px 0 10px 260px;
+    line-height: 36px;
+    zoom: 1;
+    overflow: hidden;
+}
+.hao{
+	width:300px;
+}
+.next{
+	padding:7px 75px;
+	border:none;
+	background:#ededed;
+	color:#fff;
+	font-size: 14px;
+	font-weight: 700;
+	margin-left: 260px;
+	margin-top: 10px;
+}
+	</style>
+</head>
+<body>
+		<div class="header">
+	<div class="head">
+		<div class="left">
+			<ul>
+				<li><a href="file:///C:/Users/He/Desktop/%E5%A4%A9%E7%8C%AB/%E9%A6%96%E9%A1%B5/index.html">首页</a></li>
+				<li>喵，欢迎来到天猫</li>
+				<li><a href="file:///C:/Users/He/Desktop/%E5%A4%A9%E7%8C%AB/%E7%99%BB%E5%BD%95%E9%A1%B5/login.html">请登录</a></li>
+				<li><a id="a" href="#">免费注册</a></li>
+					
+			</ul>
+		</div>
+		<div class="right">
+			<ul>
+				<li class="right_1"><a href="#">我的淘宝</a>
+					<div><a href="#">已卖出的宝贝</a><br><a href="#">已买出的宝贝</a>
+					</div>
+				</li>
+				<li><i class="iconfont icon-gouwuche"></i> 购物车0件</li>
+				<li class="right_2"><a href="#">收藏夹<b></b></a>
+					<div><a href="#">收藏的宝贝</a><br><a href="#">收藏的店铺</a>
+					</div>
+				</li>
+				<li>|</li>
+				<li class="right_3"><i class="iconfont icon-shouji1"></i><a href="#"> 手机版</a>
+					<div class="right_3_1">
+						<img class="right_3_1_0" src="image/ce81.jpg">
+					</div>
+				</li>
+				<li><a href="#">淘宝网</a></li>
+				<li class="right_4"><a href="#">商家支持<b></b></a>
+					<div class="right_4_1">
+						<b>商家：</b><br>
+						<a href="#">商家中心 　天猫规则</a><br>
+						<a href="#">商家入驻 　运营服务</a><br>
+						<a href="#">商家品控 　商家工具</a><br>
+						<a href="#">天猫智库 　喵言喵语</a><br>
+						<span>
+							<b>帮助：</b><br>
+							<a href="#">帮助中心 　　问商友</a>
+						</span>
+					</div>
+				</li>
+				<li><i class="iconfont icon-category"></i><a href="#"> 网站导航<b></b></a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+
+<div class="box"></div>
+<div style="width:100%">
+	<div class="wrap">
+		<!-- 步骤导航 s-->
+		<div class="steps">
+			<ol>
+	            <li class="active">
+	            	<i>1</i>
+	            	<span class="tsl">设置用户名</span>
+	            </li>
+				<li>
+					<i>2</i>
+					<span class="tsl">填写账号信息</span>
+				</li>
+				 <li>
+				 	<i>3</i><span class="tsl">设置支付方式</span>
+				 </li>		
+				 <li>
+				 	<i class="iconfont">✔</i>
+				 	<span class="tsl">注册成功</span>
+				 </li>
+			</ol>
+		</div>
+<!-- 注册内容 s-->
+		<div class="shouji">
+			<div class="shouji1">
+				<span style="display:inline-block;margin-left:220px;border:0">手机号　</span> 
+				<select style="display:inline-block;width:162px;height:37px;font-size:16px;" name="中国大陆 +86">
+							<option>中国大陆  　+86</option>
+							<option>中国台湾地区 +886</option>
+							<option>中国香港 +852</option>
+					</select><input class="mo" type="text" name="" placeholder="请输入手机号">
+			</div>
+			<div class="shouji2">
+							<span class="shouji2-1 tsl">验证</span>
+							<img src="image/hgyz.png" alt="" class="hao">
+						</div>
+						<button class="next">下一步</button>
+		</div>
+<!-- 遮罩层 -->
+		<div id="show">
+			<div class="nei">
+				<button class="xx">X</button>
+				<h3>注册协议</h3>
+				<p style="margin-top:10px"><span style="font-weight:bold;font-size:13px;">【审慎阅读】</span>您在申请注册流程中点击同意前，应当认真阅读以下协议。<span style="text-decoration:underline;font-weight:bold;">请您务必审慎阅读、充分理解协议中相关条款内容，其中包括：</span></p>
+				<p>1、<span style="text-decoration:underline;font-weight:bold;">与您约定免除或限制责任的条款；</span></p>
+				<p>2、<span style="text-decoration:underline;font-weight:bold;">与您约定法律适用和管辖的条款；</span></p>
+				<p>3、<span style="text-decoration:underline;font-weight:bold;">其他以粗体下划线标识的重要条款。</span></p>
+				<p>如您对协议有任何疑问，可向平台客服咨询。</p>
+				<p><span style="font-weight:bold;font-size:13px;">【特别提示】</span>当您按照注册页面提示填写信息、阅读并同意协议且完成全部注册程序后，即表示您已充分阅读、理解并接受协议的全部内容。如您因平台服务与淘宝发生争议的，适用《淘宝平台服务协议》处理。如您在使用平台服务过程中与其他用户发生争议的，依您与其他用户达成的协议处理。</p>
+				<p style="font-weight:bold;font-size:13px;text-decoration:underline;">阅读协议的过程中，如果您不同意相关协议或其中任何条款约定，您应立即停止注册程序。</p>
+				<a href="#">《淘宝平台服务协议》</a><br>
+				<a href="#">《法律声明及隐私权政策》</a><br>
+				<a href="#">《支付宝服务协议》</a>
+				<p><button class="aa">同意协议</button></p>
+			</div>
+			
+		</div>
+		</div>
+</div>
+<script>
+	$('#a').eq(0).click(function(){
+		
+		$('#show').show();
+	})
+	$('.xx').click(function(){
+		$('#show').hide();
+	})
+	$('.aa').eq(0).click(function(){
+		$('#show').slideUp(1000);
+	})
+	$('#show').mousedown(function(e){
+		$(this).css('cursor','move');
+		var offset=$(this).offset();
+		console.log(offset);
+		var x=e.pageX-offset.left;
+		var y=e.pageY-offset.top;
+		var maxWidth=$(document).width()-$('#show').width();
+		var maxHeight=$(document).height()-$('#show').height();
+		$(document).mousemove(function(evt){
+			var ll=evt.pageX-x;
+			var tt=evt.pageY-y;
+			console.log(ll+":"+tt)
+			
+			if(ll<=0){
+				ll=0
+			}else if(ll>=maxWidth){
+				//console.log($(document).width())
+					ll=maxWidth;
+			}
+			if(tt<=0){
+				tt=0
+			}else if(tt>maxHeight){
+					tt=maxHeight;
+			}
+
+			//console.log(ll)
+			$('#show').css({left:ll+'px',top:tt+'px'});
+		})
+	})
+	$(document).mouseup(function(){
+		$('#show').css('cursor','default');
+		$(this).off('mousemove')
+	})
+</script>
+</body>
+</html>

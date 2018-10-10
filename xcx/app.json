@@ -1,0 +1,27 @@
+{
+  "pages":[
+   "pages/index/index",
+    "pages/nlist/all/all",
+    "pages/vlist/all/all",
+    "pages/node/node",
+    "pages/vue/vue",
+    "pages/cont/cont",
+    "pages/vcont/cont",
+    "pages/vlist/good/good",
+    "pages/vlist/share/share",
+    "pages/vlist/ask/ask",
+    "pages/vlist/job/job",
+    "pages/vlist/dev/dev",
+    "pages/nlist/good/good",
+    "pages/nlist/share/share",
+    "pages/nlist/ask/ask",
+    "pages/nlist/job/job",
+    "pages/nlist/dev/dev"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}
